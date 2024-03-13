@@ -5,27 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <TextView
-        android:id="@+id/tvAltura"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Altura (m):" />
-
-    <EditText
-        android:id="@+id/etAltura"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tvAltura"
-        android:inputType="numberDecimal" />
-
     <TextView
         android:id="@+id/tvSexo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvAltura"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="Sexo:" />
@@ -34,32 +17,57 @@
         android:id="@+id/rgSexo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvSexo">
+        android:layout_below="@id/tvSexo"
+        android:layout_alignLeft="@id/tvSexo">
 
         <RadioButton
             android:id="@+id/rbMasculino"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/teal_700"
             android:text="Masculino" />
 
         <RadioButton
             android:id="@+id/rbFeminino"
             android:layout_width="wrap_content"
+            android:backgroundTint="@color/purple_500"
             android:layout_height="wrap_content"
             android:text="Feminino" />
 
-
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_below="@+id/rgSexo"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        android:text="Altura (m):" />
+
+    <EditText
+        android:id="@+id/etAltura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@id/tvAltura"
+        android:layout_alignBaseline="@+id/tvAltura"
+        android:textColor="@color/teal_700"
+        android:inputType="numberDecimal" />
 
     <Button
         android:id="@+id/btnCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rgSexo"
+        android:layout_below="@id/etAltura"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:onClick="calcularPesoIdeal"
+        android:backgroundTint="@color/purple_500"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
         android:text="Calcular" />
-
 
 </RelativeLayout>
